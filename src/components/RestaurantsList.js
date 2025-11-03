@@ -39,14 +39,16 @@ const RestaurantsList = ({ title, restaurants, navigation }) => {
 };
 
 const styles = StyleSheet.create({
-  title: {
-    fontSize: 18,
-    fontWeight: "bold",
-    marginLeft: 15,
-    marginBottom: 5,
-  },
   container: {
-    marginBottom: 10,
+    marginBottom: 16,
+    paddingLeft: 10,
+  },
+  title: {
+    fontSize: 20,
+    fontWeight: "600",
+    marginLeft: 5,
+    marginBottom: 8,
+    color: "#333",
   },
 });
 

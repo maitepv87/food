@@ -21,22 +21,30 @@ const SearchBar = ({ term, onTermChange, onTermSubmit }) => {
 
 const styles = StyleSheet.create({
   backgroundStyle: {
-    marginTop: 10,
-    backgroundColor: "#F0EEEE",
+    marginTop: 16,
+    backgroundColor: "#F0F0F0",
     height: 50,
-    borderRadius: 5,
-    marginHorizontal: 15,
+    borderRadius: 8,
+    marginHorizontal: 16,
     flexDirection: "row",
-    marginBottom: 10,
+    alignItems: "center",
+    paddingHorizontal: 12,
+    marginBottom: 12,
+    shadowColor: "#000",
+    shadowOpacity: 0.05,
+    shadowOffset: { width: 0, height: 1 },
+    shadowRadius: 2,
+    elevation: 2,
   },
   inputStyle: {
     flex: 1,
-    fontSize: 18,
+    fontSize: 16,
+    color: "#333",
   },
   iconStyle: {
-    fontSize: 35,
-    alignSelf: "center",
-    marginHorizontal: 15,
+    fontSize: 24,
+    marginRight: 8,
+    color: "#666",
   },
 });
 
