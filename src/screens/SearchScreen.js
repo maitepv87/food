@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, StyleSheet, Text } from "react-native";
+import { View, StyleSheet, Text, ScrollView } from "react-native";
 import { useRestaurans } from "../hooks/useRestaurans";
 import SearchBar from "../components/SearchBar";
 import RestaurantsList from "../components/RestaurantsList";
@@ -15,7 +15,7 @@ const SearchScreen = () => {
   };
 
   return (
-    <View>
+    <>
       <SearchBar
         term={term}
         onTermChange={setTerm}
@@ -23,23 +23,24 @@ const SearchScreen = () => {
           searchApi(term);
         }}
       />
+
       {errorMessage ? <Text>{errorMessage}</Text> : null}
 
-      <Text>We have found {restaurants.length} restaurants</Text>
-
-      <RestaurantsList
-        title="Cost Effective"
-        restaurants={filterRestaurantsByPrice("$")}
-      />
-      <RestaurantsList
-        title="Bit Pricier"
-        restaurants={filterRestaurantsByPrice("$$")}
-      />
-      <RestaurantsList
-        title="Big Spender"
-        restaurants={filterRestaurantsByPrice("$$$")}
-      />
-    </View>
+      <ScrollView>
+        <RestaurantsList
+          title="Cost Effective"
+          restaurants={filterRestaurantsByPrice("$")}
+        />
+        <RestaurantsList
+          title="Bit Pricier"
+          restaurants={filterRestaurantsByPrice("$$")}
+        />
+        <RestaurantsList
+          title="Big Spender"
+          restaurants={filterRestaurantsByPrice("$$$")}
+        />
+      </ScrollView>
+    </>
   );
 };
 
